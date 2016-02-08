@@ -56,7 +56,7 @@ public class TabView extends UINamingContainer {
 
     if (children != null) {
        for (UIComponent child : children) {
-          if (child.isRendered() && !(child instanceof SidebarLinks)) {
+          if (child.isRendered()) {
              child.encodeAll(context);
           }
        }

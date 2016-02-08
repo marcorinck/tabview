@@ -24,8 +24,9 @@ public class TabView extends UINamingContainer {
     FacesContext facesContext = getFacesContext();
     ELContext elContext = facesContext.getELContext();
   
-    //getAttributes().put("activeTab", activeTab); //<-- 
-     
+    //getAttributes().put("activeTab", activeTab); <-- this should call setter of property on managed bean, at least in my jsf installation it does not work
+
+    //so we use this longer method instead     
     ValueExpression valueExpression = facesContext.getApplication().getExpressionFactory()
          .createValueExpression(elContext, "#{cc.attrs.activeTab}", String.class);
     valueExpression.setValue(elContext, activeTab.getTabId());

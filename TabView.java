@@ -3,7 +3,6 @@ package my.package.components;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.BooleanUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 import javax.el.ELContext;
 import javax.el.MethodExpression;

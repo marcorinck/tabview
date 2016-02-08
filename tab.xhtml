@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<composite:interface componentType="my.package.components.Tab">
+   <composite:attribute name="label" type="java.lang.String" required="true"/>
+   <composite:attribute name="id" type="java.lang.String" required="true" />
+</composite:interface>
+
+<composite:implementation>
+   <ui:fragment rendered="#{cc.tabActive}" styleClass="tab-pane #{cc.tabActive ? 'active' : ''}">
+      <composite:insertChildren/>
+   </ui:fragment>
+</composite:implementation>
+</html>

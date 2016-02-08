@@ -28,11 +28,11 @@ public class TabView extends UINamingContainer {
      
     ValueExpression valueExpression = facesContext.getApplication().getExpressionFactory()
          .createValueExpression(elContext, "#{cc.attrs.activeTab}", String.class);
-    valueExpression.setValue(elContext, activeTab.getTabName());
+    valueExpression.setValue(elContext, activeTab.getTabId());
   
     MethodExpression onTabChange = (MethodExpression) getAttributes().get("onTabChange");
     if (onTabChange != null) {
-      onTabChange.invoke(elContext, new Object[]{activeTab.getTabName()});
+      onTabChange.invoke(elContext, new Object[]{activeTab.getTabId()});
     }
   }
 
@@ -87,6 +87,6 @@ public class TabView extends UINamingContainer {
   }
 
   public boolean isTabActive(Tab tab) {
-    return StringUtils.equals(getCurrentActiveTab(), tab.getTabName());
+    return StringUtils.equals(getCurrentActiveTab(), tab.getTabId());
   }
 }
